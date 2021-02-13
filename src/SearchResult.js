@@ -1,6 +1,6 @@
 import { Favorite } from '@material-ui/icons'
 import React from 'react'
-import './SearchResult.css'
+import './style/SearchResult.css'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import StarIcon from '@material-ui/icons/Star'
 

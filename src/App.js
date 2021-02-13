@@ -1,9 +1,11 @@
-import './App.css';
+import './style/App.css';
 import Home from './Home';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import SearchPage from './SearchPage';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import Test from './Test'
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route exact path="/test">
+            <Test />
+          </Route>
           <Route exact path="/search">
             <SearchPage />
           </Route>
