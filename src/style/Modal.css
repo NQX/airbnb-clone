@@ -1,0 +1,54 @@
+.btn-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    color: red;
+}
+
+
+.input {
+    border: none;
+    height: 40px;
+    width: 95%;
+    padding-left: 0px;
+    font-size: 17px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input-top {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 50px;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid lightgray;
+}
+
+.input-bottom {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid lightgray;
+    border-top: none;
+}
+
+.register-form > button {
+    background-color: red;
+    color: white;
+    width: 100%;
+    height: 50px;
+    text-transform: inherit;
+    border-radius: 10px;
+}

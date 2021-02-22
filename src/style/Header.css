@@ -43,3 +43,44 @@
     width: 15vw;
     margin-right: 80px;
 }
+
+
+
+
+
+.avatar-icon {
+    cursor: pointer;
+    transform: scale(0.7); 
+}
+
+.avatar-box {
+    border: 1px solid lightgray;
+    width: 80px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    
+}
+
+.burger-menu {
+    cursor: pointer;
+}
+
+
+.dropdown {
+    position: absolute;
+    right: 0px;
+    border-radius: 10px;
+    background-color: white;
+    height: 300px;
+    border: 1px solid lightgray;
+}
+
+.dropdown-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
