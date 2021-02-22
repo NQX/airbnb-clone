@@ -1,0 +1,128 @@
+.detailPage {
+    width: 80%;
+}
+
+img {
+    object-fit: cover;
+}
+
+.detailPage__body {
+    margin-top: 50px;
+}
+
+.detailPage__body__heading {
+    border-bottom: 1px solid lightgray;
+}
+
+.detailPage__body__text {
+    
+}
+
+.image > img {
+    transition: 1s;
+}
+
+.image > img:hover {
+
+}
+
+.gallery {
+    display: flex;
+}
+
+.gallery__left {
+    width: 50%;
+}
+
+.gallery__middle {
+    width: 25% !important;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.gallery__right {
+    width: 25% !important;
+}
+
+.image__left {
+    border-radius: 15px 0px 0px 15px;
+    width: 100% !important;
+}
+
+.image__middle {
+    width: 100% !important;
+}
+
+
+.image__right {
+    width: 100% !important;
+}
+
+.image__right__top {
+    border-radius: 0px 15px 0px 0px;
+}
+
+.image__right__bottom {
+    border-radius: 0px 0px 15px 0px;
+
+}
+
+.detailPage__body {
+    display: flex;
+}
+
+.detailPage__body__left {
+    width: 60%;
+    padding-right: 80px;
+}
+
+.detailPage__body__right {
+    width: 35%;
+}
+
+
+.BookingBox__wrapper {
+    position: sticky;
+    top: 100px;
+}
+
+
+.equipment__box {
+    display: flex;
+}
+
+.equipment__box__left {
+    width: 50%;
+}
+
+.equipment__box__right {
+    width: 50%;
+}
+
+.equipment__box__item {
+    padding: 10px;
+}
+
+.detail-box-padding {
+    border-bottom: 1px solid lightgray;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.smallcard {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.smallcard > img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.smallcards-container {
+    display: flex; 
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+}

@@ -1,0 +1,18 @@
+.BookingBox {
+    display: block;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 25px 15px 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+.BookingBox > button {
+    color: white;
+    text-transform: inherit;
+    width: 100%;
+    background-color: #ff7779;
+}
+
+.BookingBox > button:hover {
+    color: #ff7779;
+}
