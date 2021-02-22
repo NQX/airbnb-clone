@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../style/Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import LanguageIcon from '@material-ui/icons/Language';
@@ -6,9 +6,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
+import Modal from './Modal';
+
 function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+    
     return (
         <div className="header">
+            <Modal open={isOpen} onClose={() => setIsOpen(false) } />
+
             <Link to="/">
                 <img className="header__icon" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="" />
             </Link>
@@ -22,7 +28,7 @@ function Header() {
                 <p>Become a host</p>
                 <LanguageIcon />
                 <ExpandMoreIcon />
-                <Avatar />
+                <Avatar onClick={() => setIsOpen(true) } />
             </div>
         </div>
     )
