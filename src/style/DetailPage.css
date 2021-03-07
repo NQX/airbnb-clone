@@ -1,4 +1,5 @@
 .detailPage {
+    padding-top: 20px;
     width: 80%;
 }
 
@@ -125,4 +126,15 @@ img {
     justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
+}
+
+.bottomInfos {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.dot-seperator {
+    margin-left: 7px;
+    margin-right: 7px;
 }

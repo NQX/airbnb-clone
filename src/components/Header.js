@@ -37,7 +37,7 @@ function Header() {
                         <Avatar className="avatar-icon" onClick={() => setIsOpen(true) } />
                         <Modal open={isOpen} onClose={() => setIsOpen(false) } />
                     </div> }
-                        
+
                 { isLoggedIn && <div style={{position: 'relative'}}> 
                         <div className="avatar-box">
                         <svg className="burger-menu" viewBox="0 0 100 80" width="15" height="15">
