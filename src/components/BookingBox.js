@@ -11,8 +11,14 @@ function BookingBox() {
             
             <div className="input-box">
                 <div className="inputs-top">
-                    <div className="booking-input-topLeft">Start</div>
-                    <div className="booking-input-topRight">Ende</div>
+                    <div className="booking-input-topLeft">
+                        <p className="booking-input-date">Start Datum</p>
+                        <p className="booking-input-text">Datum auswählen</p>
+                    </div>
+                    <div className="booking-input-topRight">
+                        <p className="booking-input-date">End Datum</p>
+                        <p className="booking-input-text">Datum auswählen</p>
+                    </div>
                 </div>
                 <div className="booking-input-bottom">Gasete</div>
             </div>

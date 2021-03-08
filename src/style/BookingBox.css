@@ -46,9 +46,10 @@
 
 .booking-input-topLeft {
     padding: 5px;
+    padding-left: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
     border: none;
     height: 40px;
     width: 50%;
@@ -60,8 +61,9 @@
 .booking-input-topRight {
     padding: 5px;
     display: flex;
+    padding-left: 10px;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
     border: none;
     width: 50%;
     height: 40px;
@@ -83,4 +85,15 @@
 .bookingBox-bottomText {
     text-align: center;
     font-size: 14px;
+}
+
+.booking-input-date {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.booking-input-text {
+    font-size: 14px;
+    color: rgb(124, 124, 124);
 }
