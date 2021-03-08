@@ -19,7 +19,7 @@ function Header() {
         <div className="header">
 
             <Link to="/">
-                <img className="header__icon" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg" alt="" />
+                <img className="header__icon" src={'./images/logo.png'} alt="" />
             </Link>
 
             <div className="header__center">

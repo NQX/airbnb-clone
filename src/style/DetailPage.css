@@ -43,7 +43,24 @@ img {
 
 .gallery__right {
     width: 25% !important;
+    position: relative;
 }
+
+.btn-gallery-more {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid darkgray;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 8px;
+}
+
 
 .image__left {
     border-radius: 15px 0px 0px 15px;
@@ -65,7 +82,6 @@ img {
 
 .image__right__bottom {
     border-radius: 0px 0px 15px 0px;
-
 }
 
 .detailPage__body {
@@ -138,3 +154,9 @@ img {
     margin-left: 7px;
     margin-right: 7px;
 }
+
+
+
+
+/* Weitere Unterkuenfte */
+

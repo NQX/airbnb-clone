@@ -18,13 +18,13 @@ function DetailPage() {
     return (
         <div className="detailPage">
             <div className="titleBar">
-                <h1>Seafront flat</h1>
+                <h1>Soliwa Personalservice GmbH</h1>
                 <div className="bottomInfos">
                     <p>*4.89 (49 Bewertungen)</p>
                     <span className="dot-seperator">·</span>
-                    <p>Superhost</p>
+                    <p>Teambüro</p>
                     <span className="dot-seperator">·</span>
-                    <p>Ratingen, Nordrhein-Westfalen, Deutschland</p>
+                    <p>Berlin - Deutschland</p>
                 </div>
             </div>
             <div className="gallery">
@@ -38,52 +38,45 @@ function DetailPage() {
                 <div className="gallery__right">
                     <img className="image image__right image__right__top" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
                     <img className="image image__right image__right__bottom" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
+                    <div className="btn-gallery-more">Alle Bilder</div>
                 </div> 
             </div>
             <div className="detailPage__body">
                 <div className="detailPage__body__left">
                     <div className="detailPage__body__heading">
-                        <h2>Privatzimmer in Haus · Gastgeber: Darren</h2>
+                        <h2>Unser Space</h2>
                         <div className="bottomInfos">
-                            <p>2 Gaeste</p>
+                            <p>Friedrichstr. 117</p>
                             <span className="dot-seperator">·</span>
-                            <p>1 Schlafzimmer</p>
+                            <p>Aufgang B</p>
                             <span className="dot-seperator">·</span>
-                            <p>2 Betten</p>
+                            <p>10117 Berlin</p>
                             <span className="dot-seperator">·</span>
-                            <p>1 Badezimmer</p>
+                            <p>Deutschland</p>
                         </div>
                     </div>
                     <div className="detailPage__body__text detail-box-padding">
                         <p>
-                            A very bright,cosy & unique rustic townhouse,with DIY pallet art and home decor,situated in the heart of Birkirkara; 
-                            Centre of Malta. All guests have access to a well-sized terrace &large roof with views, good WiFisystem &outdoor plugs. 
-                            Bus stops that go to Valletta &other tourist destinations are only 5 minutes away from this place. It's ideal for young, 
-                            solo travellers or couple looking for short stay accommodation… 
-
-                            A very bright,cosy & unique rustic townhouse,with DIY pallet art and home decor,situated in the heart of Birkirkara; 
-                            Centre of Malta. All guests have access to a well-sized terrace &large roof with views, good WiFisystem &outdoor plugs. 
-                            Bus stops that go to Valletta &other tourist destinations are only 5 minutes away from this place. It's ideal for young, 
-                            solo travellers or couple looking for short stay accommodation… 
-
-                            A very bright,cosy & unique rustic townhouse,with DIY pallet art and home decor,situated in the heart of Birkirkara; 
-                            Centre of Malta. All guests have access to a well-sized terrace &large roof with views, good WiFisystem &outdoor plugs. 
-                            Bus stops that go to Valletta &other tourist destinations are only 5 minutes away from this place. It's ideal for young, 
-                            solo travellers or couple looking for short stay accommodation… 
+                        Ergonomischer Stuhl mit Tisch in geräumigen, hellen Raum. Drucker, 
+                        WLAN, Küche und Toilette, Café und Kantine, nette Menschen aus IT, 
+                        HR und Datenschutz. Sehr gute Anbindung zu öffentlichen Verkehrsmitteln 
+                        und es gibt kostenlose Parkplätze.
                         </p>
                     </div>
                     <div className="equipment detail-box-padding">
                         <h2>Ausstattung</h2>
                         <div className="equipment__box">
                             <div className="equipment__box__left">
-                                <div className="equipment__box__item">Waschmaschine</div>
-                                <div className="equipment__box__item">WLAN</div>
-                                <div className="equipment__box__item">Erste Hilfe Set</div>
+                                <div className="equipment__box__item">Bike Parking</div>
+                                <div className="equipment__box__item">Wifi</div>
+                                <div className="equipment__box__item">Ergonomic Chairs</div>
+                                <div className="equipment__box__item">Scanner</div>
                             </div>
                             <div className="equipment__box__right">
-                                <div className="equipment__box__item">Waschmaschine</div>
-                                <div className="equipment__box__item">WLAN</div>
-                                <div className="equipment__box__item">Erste Hilfe Set</div>
+                                <div className="equipment__box__item">Free Coffee</div>
+                                <div className="equipment__box__item">Kitchen</div>
+                                <div className="equipment__box__item">Ergonomic Chairs</div>
+                                <div className="equipment__box__item">Printer</div>
                             </div>
                         </div>
                     </div>
@@ -111,6 +104,8 @@ function DetailPage() {
       </GoogleMapReact>
             </div>
             <div>Host</div>
+
+            
             <div>
                 <h2>Weitere Unterkuenfte</h2>
                 <div className="smallcards-container">
