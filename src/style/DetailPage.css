@@ -160,3 +160,300 @@ img {
 
 /* Weitere Unterkuenfte */
 
+.more-locations {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.more-locations > h2 {
+    margin-bottom: 25px;
+}
+
+.text-rating {
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #666;
+}
+
+.text-line-1 {
+    margin-top: 5px;
+}
+
+.text-line-2 {
+    margin-top: 5px;
+}
+
+.text-line-3 {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+
+/* cities */
+
+.cities {
+    border-top: 1px solid lightgray;    
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+}
+
+.cities > h2 {
+    margin-bottom: 30px;
+}
+
+.city-table {
+    display: flex;
+}
+
+.city-table-cell {
+    width: 25%;
+    margin-top: 25px;
+}
+
+.city-table-cell {
+    margin-bottom: 20px;
+    color: darkgray;
+    font-weight: 300;
+}
+
+.cities__more {
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.cities__more__container {
+    display: flex;
+}
+
+.cities__more__container > p {
+    font-weight: 300;
+    color: rgb(124, 124, 124);
+}
+
+
+/* calendar */
+
+.calendar {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.calendar > h2 {
+    margin-bottom: 10px;
+}
+
+.calendar > p {
+    font-weight: 300;
+    color: rgb(124, 124, 124);
+    font-size: 14px;
+}
+
+.calendar > img {
+    margin-top: 25px;
+}
+
+.calendar > a {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* rating */
+.rating {
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.rating > h2 {
+    margin-bottom: 30px;
+}
+
+.rating-table {
+    display: flex;
+}
+
+.rating-tableLeft {
+    width: 50%;
+}
+
+.rating-tableRight {
+    width: 50%;
+}
+
+.rating-card {
+    margin-top: 50px;
+    padding-right: 50px;
+}
+
+.rating-card-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 35px;
+    margin-right: 10px;
+}
+
+.rating-card-top {
+    display: flex;
+    align-items: center;
+}
+
+.rating-card-name {
+
+}
+
+.rating-card-bottom {
+
+}
+
+.rating-card-bottom > p {
+    line-height: 24px;
+    margin-top: 15px;
+    margin-right: 60px;
+    font-weight: 300;
+}
+
+.rating-card-date {
+    margin-top: 3px;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgb(124, 124, 124);
+}
+
+.rating-card-link {
+    color: black;
+    font-weight: 600;
+}
+
+.rating-btn-more {
+    cursor: pointer;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid darkgray;
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+}
+
+
+/* map */
+.map {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.map > h2 {
+    margin-bottom: 25px;
+}
+
+.map-heading {
+    font-weight: 500;
+}
+
+.map-subheading {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.map-btn-more {
+    cursor: pointer;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid darkgray;
+    width: 230px;
+    height: 45px;
+    border-radius: 7px;
+}
+
+
+/* host */
+.host {
+    margin-top: 25px !important;
+    line-height: 24px;
+}
+
+.host-card {
+    display: flex;
+}
+
+.host-subSlider {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.host-subSlider > p {
+    margin-right: 25px;
+}
+
+.host-table {
+    display: flex;
+}
+
+.host-table-left {
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 120px;
+}
+
+.host-table-right {
+    width: 50%;
+}
+
+.host-card-title {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.host-card-date {
+    color: rgb(124, 124, 124);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.host-card-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.host-card-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 35px;
+    margin-right: 20px;
+}
+
+.host-textBox-top {
+    font-weight: 300;
+}
+
+.host-textBox-top > a {
+    color: black;
+    font-weight: 600;
+}
+
+.host-textBox-bottom {
+    margin-top: 25px;
+    font-weight: 300;
+}
+
+.host-bottom-heading {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.host-tableRight-text {
+    margin-bottom: 15px;
+}
