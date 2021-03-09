@@ -279,6 +279,10 @@ img {
     font-weight: 600;
 }
 
+.calendar-container {
+    display: flex;
+}
+
 
 /* rating */
 .rating {

@@ -1,0 +1,19 @@
+.time-table {
+    margin-top: 20px;
+}
+
+.time-table-row {
+    display: flex;
+
+}
+
+.time-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 55px;
+    height: 35px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+}

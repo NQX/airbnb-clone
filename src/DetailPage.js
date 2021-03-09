@@ -2,6 +2,8 @@ import React from 'react'
 import BookingBox from './components/BookingBox'
 import './style/DetailPage.css'
 import GoogleMapReact from 'google-map-react'
+import MyCalendar from './components/MyCalendar'
+import TimePicker from './components/TimePicker'
 
 
 
@@ -63,6 +65,7 @@ function DetailPage() {
                         und es gibt kostenlose Parkplätze.
                         </p>
                     </div>
+
                     <div className="equipment detail-box-padding">
                         <h2>Ausstattung</h2>
                         <div className="equipment__box">
@@ -79,12 +82,19 @@ function DetailPage() {
                                 <div className="equipment__box__item">Printer</div>
                             </div>
                         </div>
+                    <div className="rating-btn-more">Zeige alle 12 Austattungsdetails</div>
+
                     </div>
 
                     <div className="calendar detail-box-padding">
                         <h2>Wähle ein Startdatum aus</h2>
                         <p>Mindestbuchung: 2 Stunden</p>
+
                         <img src={'./images/calendar.png'} width="100%"alt=""/>
+                        <div className="calendar-container">
+                            <MyCalendar />
+                            <TimePicker />
+                        </div>
                         <a href="#">Buchungsdaten löschen</a>
                     </div>
                     
