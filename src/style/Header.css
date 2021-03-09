@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
-    background-color: red;
+    background-color: #111;
     color: white;
     z-index: 100;
     width: 100%;
@@ -29,6 +29,7 @@
     height: 30px;
     border: 1px solid lightgray;
     border-radius: 999px;
+    background-color: white;
 }
 
 .header__center > input {
@@ -36,6 +37,10 @@
     width: 250px;
     padding: 10px;
     outline-width: 0;
+}
+
+.searchIcon {
+    color: black;
 }
 
 .header__right {
@@ -63,6 +68,7 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 15px;
+    background-color: white;
     
 }
 

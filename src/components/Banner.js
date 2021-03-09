@@ -10,7 +10,7 @@ function Banner() {
     const history = useHistory()
 
     return (
-        <div className="banner">
+        <div style={{backgroundImage: 'url("./images/office.jpg")'}} className="banner">
             <div className="banner__search">
                 {showSearch && <Search />}
                 <Button onClick={() => setShowSearch(!showSearch)} 

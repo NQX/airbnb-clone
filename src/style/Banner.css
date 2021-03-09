@@ -1,7 +1,6 @@
 .banner {
-    height: 50vh;
+    height: 60vh;
     position: relative;
-    background: url('https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg') center center;
 }
 
 .banner__info {

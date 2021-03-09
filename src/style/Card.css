@@ -1,4 +1,5 @@
 .card {
+    color: black;
     margin: 10px;    
     border-radius: 10px;
     overflow: hidden;
@@ -36,4 +37,8 @@
     font-weight: 300;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+a {
+    text-decoration: none;
 }
