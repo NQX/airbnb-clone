@@ -5,19 +5,20 @@ import moment from 'moment'
 
 
 function init() {
-    const date = new Date();
     console.log('days in month', moment().daysInMonth())
     console.log('weekday', moment().day())
+    console.log('days in februar', moment().add(11, 'months').daysInMonth())
+    console.log('1. n', moment().add(1, 'months').startOf('month').day())
 }
 
 function MyCalendar() {
     init();
     return (
         <div>
-            <div>
-                <span>&#5176;</span>
-                <span>April 2021</span>
-                <span>&#5171;</span>
+            <div className="calendar-controls-container">
+                <span className="calendar-arrow-left">&#5176;</span>
+                <span id="calendar-title">April 2021</span>
+                <span className="calendar-arrow-right">&#5171;</span>
             </div>
 
             <table>
