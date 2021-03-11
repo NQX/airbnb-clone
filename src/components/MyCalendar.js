@@ -4,15 +4,70 @@ import moment from 'moment'
 
 
 
+let monthArray, daysArray;
+
 function init() {
-    console.log('days in month', moment().daysInMonth())
-    console.log('weekday', moment().day())
-    console.log('days in februar', moment().add(11, 'months').daysInMonth())
-    console.log('1. n', moment().add(1, 'months').startOf('month').day())
-    //console.log(moment().day())
-    let tmp = moment().day()
-    console.log(document.getElementById('date-1' ))
+  
+    daysArray = []
+    monthArray = []
+    const firstWeekdayInMonth = moment().add(1, 'months').startOf('month').day();
+    const daysInMonth = moment().add(1, 'months').daysInMonth();
+
+    for(let i = 1; i < firstWeekdayInMonth; i++) {
+       daysArray.push('')
+    }
+
+    for(let u = 1; u <= daysInMonth; u++) {
+        daysArray.push(u)
+     }
+
+    let counter = 0;
+    for(let x = 0; x < 6; x++) {
+        monthArray[x] = []
+        for(let y= 1; y <= 7; y++) {
+            monthArray[x].push(daysArray[counter] ? daysArray[counter] : '')
+            counter++
+        }
+    }
+
+
 }
+
+
+
+// const today = new Date();
+// const todayFormatted = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}}`;
+// const daysInWeek = [1,2,3,4,5,6,0]
+// //const [selectedDate, setSelectedDate] = useState(today);
+// //const selectedMonthLastDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0)
+// //const prevMonthLastDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0)
+// const daysInMonth = selectedMonthLastDate.getDate();
+// //const firstDayInMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1).getDay()
+// const startingPoint = daysInWeek.indexOf(firstDayInMonth) + 1;
+// let prevMonthStartingPoint = prevMonthLastDate.getDate() - daysInWeek.indexOf(firstDayInMonth) + 1;
+// let currentMonthCounter = 1;
+// let nextMonthCounter = 1;
+// const rows = 6;
+// const cols = 7;
+// const calendarRows = {};
+
+
+
+const monthNamesArr = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+
 
 function MyCalendar() {
     init();
@@ -37,62 +92,22 @@ function MyCalendar() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="calendar-row">
-                        <td id="date-1" className="calendar-date"></td>
-                        <td id="date-2" className="calendar-date"></td>
-                        <td id="date-3" className="calendar-date"></td>
-                        <td id="date-4" className="calendar-date">1</td>
-                        <td id="date-5" className="calendar-date date-range">2</td>
-                        <td id="date-6" className="calendar-date date-range">3</td>
-                        <td id="date-7" className="calendar-date date-active">4</td>
-                    </tr>
-                    <tr className="calendar-row">
-                        <td id="date-8" className="calendar-date">5</td>
-                        <td id="date-9" className="calendar-date">6</td>
-                        <td id="date-10" className="calendar-date">7</td>
-                        <td id="date-11" className="calendar-date">8</td>
-                        <td id="date-12" className="calendar-date">9</td>
-                        <td id="date-13" className="calendar-date">10</td>
-                        <td id="date-14" className="calendar-date">11</td>
-                    </tr>
-                    <tr className="calendar-row">
-                        <td id="date-15" className="calendar-date">12</td>
-                        <td id="date-16" className="calendar-date">13</td>
-                        <td id="date-17" className="calendar-date">14</td>
-                        <td id="date-18" className="calendar-date">15</td>
-                        <td id="date-19" className="calendar-date">16</td>
-                        <td id="date-20" className="calendar-date">17</td>
-                        <td id="date-21" className="calendar-date">18</td>
-                    </tr>
-                    <tr className="calendar-row">
-                        <td id="date-22" className="calendar-date">19</td>
-                        <td id="date-23" className="calendar-date">20</td>
-                        <td id="date-24" className="calendar-date">21</td>
-                        <td id="date-25" className="calendar-date">22</td>
-                        <td id="date-26" className="calendar-date">23</td>
-                        <td id="date-27" className="calendar-date">24</td>
-                        <td id="date-28" className="calendar-date">25</td>
-                    </tr>
-                    <tr className="calendar-row">
-                        <td id="date-29" className="calendar-date">26</td>
-                        <td id="date-30" className="calendar-date">27</td>
-                        <td id="date-31" className="calendar-date">28</td>
-                        <td id="date-32" className="calendar-date">29</td>
-                        <td id="date-33" className="calendar-date">30</td>
-                        <td id="date-34" className="calendar-date"></td>
-                        <td id="date-35" className="calendar-date"></td>
-                    </tr>  
-                    <tr className="calendar-row">
-                        <td id="date-36" className="calendar-date"></td>
-                        <td id="date-37" className="calendar-date"></td>
-                        <td id="date-38" className="calendar-date"></td>
-                        <td id="date-39" className="calendar-date"></td>
-                        <td id="date-40" className="calendar-date"></td>
-                        <td id="date-41" className="calendar-date"></td>
-                        <td id="date-42" className="calendar-date"></td>
-                    </tr>
-                    
-                    
+                    {
+                        monthArray.map((key, index) => {
+                        return(<tr className="calendar-row">
+                            {    
+                            key.map(da => {
+                                if(da != '') {
+                                    return (<td className="calendar-date">{da}</td>)
+                                } else {
+                                    return (<td className="calendar-blank">{da}</td>)
+                                }
+                            })
+                            }
+                        </tr>)
+                        
+                        })
+                    }
                 </tbody>
             </table>
         </div>

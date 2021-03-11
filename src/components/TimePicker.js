@@ -39,7 +39,7 @@ function TimePicker() {
                         <td className="time-tile">10 pm</td>
                         <td className="time-tile">11 pm</td>
                         <td className="time-tile">12 am</td>
-                        <td className="time-tile"></td>
+                        <td className=""></td>
                     </tr>
                 </tbody>
             </table>

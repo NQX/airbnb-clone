@@ -4,6 +4,7 @@ import './style/DetailPage.css'
 import GoogleMapReact from 'google-map-react'
 import MyCalendar from './components/MyCalendar'
 import TimePicker from './components/TimePicker'
+import Rating from './components/Rating'
 
 
 
@@ -90,7 +91,7 @@ function DetailPage() {
                         <h2>Wähle ein Startdatum aus</h2>
                         <p>Mindestbuchung: 2 Stunden</p>
 
-                        <img src={'./images/calendar.png'} width="100%"alt=""/>
+                        {/* <img src={'./images/calendar.png'} width="100%"alt=""/> */}
                         <div className="calendar-container">
                             <MyCalendar />
                             <TimePicker />
@@ -113,6 +114,7 @@ function DetailPage() {
                     <div className="rating-tableLeft">
 
                         <img src={'./images/rating.png'} alt="" width="85%"/>
+                        <Rating />
 
                         <div className="rating-card">
                             <div className="rating-card-top">
