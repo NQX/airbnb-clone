@@ -9,6 +9,9 @@ function init() {
     console.log('weekday', moment().day())
     console.log('days in februar', moment().add(11, 'months').daysInMonth())
     console.log('1. n', moment().add(1, 'months').startOf('month').day())
+    //console.log(moment().day())
+    let tmp = moment().day()
+    console.log(document.getElementById('date-1' ))
 }
 
 function MyCalendar() {
@@ -22,14 +25,16 @@ function MyCalendar() {
             </div>
 
             <table>
-                <thead className="calendar-head-container">
-                        <td className="calendar-head">Mo</td>
-                        <td className="calendar-head">Di</td>
-                        <td className="calendar-head">Mi</td>
-                        <td className="calendar-head">Do</td>
-                        <td className="calendar-head">Fr</td>
-                        <td className="calendar-head">Sa</td>
-                        <td className="calendar-head">So</td>
+                <thead>
+                    <tr className="calendar-head-container">
+                        <th className="calendar-head">Mo</th>
+                        <th className="calendar-head">Di</th>
+                        <th className="calendar-head">Mi</th>
+                        <th className="calendar-head">Do</th>
+                        <th className="calendar-head">Fr</th>
+                        <th className="calendar-head">Sa</th>
+                        <th className="calendar-head">So</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr className="calendar-row">
