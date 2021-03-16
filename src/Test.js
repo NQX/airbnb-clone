@@ -25,7 +25,7 @@ function Test() {
         
         <div style={{position: 'sticky', top: 50, width: '40vw', height: '90vh'}}>
             <GoogleMapReact
-                bootstrapURLKeys={{ key: 'AIzaSyDPm1WLTQeH4Gb3PZtK7XyyU5FAas4Wm6s' }}
+                bootstrapURLKeys={{ key: '' }}
                 defaultCenter={location}
                 defaultZoom={12}
             >

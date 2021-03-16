@@ -1,55 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../style/MyCalendar.css'
 import moment from 'moment'
 
 
-
-let monthArray, daysArray;
-
-function init() {
-  
-    daysArray = []
-    monthArray = []
-    const firstWeekdayInMonth = moment().add(1, 'months').startOf('month').day();
-    const daysInMonth = moment().add(1, 'months').daysInMonth();
-
-    for(let i = 1; i < firstWeekdayInMonth; i++) {
-       daysArray.push('')
-    }
-
-    for(let u = 1; u <= daysInMonth; u++) {
-        daysArray.push(u)
-     }
-
-    let counter = 0;
-    for(let x = 0; x < 6; x++) {
-        monthArray[x] = []
-        for(let y= 1; y <= 7; y++) {
-            monthArray[x].push(daysArray[counter] ? daysArray[counter] : '')
-            counter++
-        }
-    }
-
-
-}
-
-
-
-// const today = new Date();
-// const todayFormatted = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}}`;
-// const daysInWeek = [1,2,3,4,5,6,0]
-// //const [selectedDate, setSelectedDate] = useState(today);
-// //const selectedMonthLastDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0)
-// //const prevMonthLastDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0)
-// const daysInMonth = selectedMonthLastDate.getDate();
-// //const firstDayInMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1).getDay()
-// const startingPoint = daysInWeek.indexOf(firstDayInMonth) + 1;
-// let prevMonthStartingPoint = prevMonthLastDate.getDate() - daysInWeek.indexOf(firstDayInMonth) + 1;
-// let currentMonthCounter = 1;
-// let nextMonthCounter = 1;
-// const rows = 6;
-// const cols = 7;
-// const calendarRows = {};
+let curMonth;
 
 
 
@@ -70,13 +24,77 @@ const monthNamesArr = [
 
 
 function MyCalendar() {
-    init();
+
+    useEffect(() => {
+        init()
+    }, [])
+
+    const [currentMonth, setCurrentMonth] = useState(0);
+    const [currentYear, setCurrentYear] = useState(0);
+
+    const [monthArray, setMonthArray] = useState([]);
+    const [daysArray, setDaysArray] = useState([]);
+
+
+    const createMonth = (offset) => {
+         setCurrentMonth(moment().month() + offset);
+        // setDaysArray([])
+         //setMonthArray([])
+         const firstWeekdayInMonth = moment().add(offset, 'months').startOf('month').day();
+         const daysInMonth = moment().add(offset, 'months').daysInMonth();
+    
+         for(let i = 1; i < firstWeekdayInMonth; i++) {
+         daysArray.push('')
+         }
+    
+        for(let u = 1; u <= daysInMonth; u++) {
+            daysArray.push(u)
+        }
+    
+        let counter = 0;
+        for(let x = 0; x < 6; x++) {
+            monthArray[x] = []
+            for(let y= 1; y <= 7; y++) {
+                monthArray[x].push(daysArray[counter] ? daysArray[counter] : '')
+                counter++
+            }
+        }   
+    }
+
+    const init = () => {
+        console.log('init')
+        setCurrentYear( moment().year())
+        setCurrentMonth(moment().month())
+    
+        //console.log(currentYear, currentMonth)
+        
+        createMonth(0);
+        console.log(monthArray)
+        //console.log('aaa',moment().add(-1, 'months').month())
+        
+    }
+
+
+
+    const nextMonth = () => {
+        console.log('click next')
+        //clearCalendar();
+         createMonth(1)
+    }
+    
+    const prevMonth = () => {
+        console.log('click prev')
+    }
+    
+    
+
+
     return (
         <div>
             <div className="calendar-controls-container">
-                <span className="calendar-arrow-left">&#5176;</span>
-                <span id="calendar-title">April 2021</span>
-                <span className="calendar-arrow-right">&#5171;</span>
+                <span className="calendar-arrow-left" onClick={() => prevMonth()}>&#5176;</span>
+                <span id="calendar-title">{monthNamesArr[currentMonth]} {currentYear}</span>
+                <span className="calendar-arrow-right" onClick={() => nextMonth()}>&#5171;</span>
             </div>
 
             <table>
@@ -93,7 +111,7 @@ function MyCalendar() {
                 </thead>
                 <tbody>
                     {
-                        monthArray.map((key, index) => {
+                        monthArray && monthArray.map((key, index) => {
                         return(<tr className="calendar-row">
                             {    
                             key.map(da => {

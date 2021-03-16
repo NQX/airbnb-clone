@@ -1,6 +1,10 @@
 .banner {
     height: 60vh;
+    width: 100%;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .banner__info {

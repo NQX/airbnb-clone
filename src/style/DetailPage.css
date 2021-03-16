@@ -3,6 +3,12 @@
     width: 80%;
 }
 
+@media screen and (min-width: 2500px) {
+    .detailPage {
+        width: 45%;
+    }
+}
+
 img {
     object-fit: cover;
 }

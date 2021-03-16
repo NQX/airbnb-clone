@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './style/SearchPage.css'
 import { Button } from '@material-ui/core'
 import SearchResult from './SearchResult'
 
+import axios from 'axios'
+
 function SearchPage() {
+
+    useEffect(() => {
+        axios.get('http://localhost:3003/api/tickets')
+            .then(data => {
+                console.log(data)
+            })
+    }, [])
+
     return (
         <div className="searchPage">
             <div className="searchPage__info">
