@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Test from './Test'
 import DetailPage from './DetailPage';
 import Admin from './Admin';
-import Test2 from './Test2'
 
 
 function App() {
@@ -20,10 +19,6 @@ function App() {
 
           <Route exact path="/test">
             <Test />
-          </Route>
-
-          <Route exact path="/test2">
-            <Test2 />
           </Route>
 
           <Route exact path="/search">
