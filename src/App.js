@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Test from './Test'
 import DetailPage from './DetailPage';
+import Admin from './Admin';
+import Test2 from './Test2'
+
 
 function App() {
   return (
@@ -14,18 +17,31 @@ function App() {
       <Router>
         <Header />
         <Switch>
+
           <Route exact path="/test">
             <Test />
           </Route>
+
+          <Route exact path="/test2">
+            <Test2 />
+          </Route>
+
           <Route exact path="/search">
             <SearchPage />
           </Route>
-          <Route exact path="/detail">
+
+          <Route exact path="/detail/:id">
             <DetailPage />
           </Route>
+
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+
           <Route exact path="/">
             <Home /> 
           </Route>
+
         </Switch>
         <Footer />
       </Router>

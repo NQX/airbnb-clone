@@ -13,13 +13,13 @@ function Header() {
 
     let isLoggedIn = true;
 
-
+    //dropdown is hidden
     
     return (
         <div className="header">
 
             <Link to="/">
-                <img className="header__icon" src={'./images/logo.png'} alt="" />
+                <img className="header__icon" src="http://static.yak-juno.net/logo.png" alt="" />
             </Link>
 
             <div className="header__center">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BookingBox from './components/BookingBox'
 import './style/DetailPage.css'
 import GoogleMapReact from 'google-map-react'
@@ -6,24 +6,47 @@ import MyCalendar from './components/MyCalendar'
 import TimePicker from './components/TimePicker'
 import Rating from './components/Rating'
 
+import axios from 'axios'
+import { useParams } from 'react-router'
 
 
-const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
-  }
-
-  const AnyReactComponent = ({ text }) => <div>{text}</div>;
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import { Tooltip } from "@material-ui/core";
 
 
-function DetailPage() {
+  const latlng = {
+    lat: -33.8148145,
+    lng: 151.1663935
+  };
+  const center = { lat: -33.8148145, lng: 151.1663935 };
+
+
+
+function DetailPage({props}) {
+    const [results, setResults] = useState(null);
+
+    const {id} = useParams()
+
+
+    useEffect(() => {
+        axios.get(`http://localhost:3003/api/tickets/${id}`)
+            .then(data => {
+                setResults(data.data)
+            })
+    }, [])
+
+
+    if(!results) {
+        return <div>loading</div>
+    }
+    
     return (
         <div className="detailPage">
+
             <div className="titleBar">
-                <h1>Soliwa Personalservice GmbH</h1>
+                <h1>{ results.title }</h1>
                 <div className="bottomInfos">
-                    <p>*4.89 (49 Bewertungen)</p>
+                    <p>*{results.rating} (49 Bewertungen)</p>
                     <span className="dot-seperator">·</span>
                     <p>Teambüro</p>
                     <span className="dot-seperator">·</span>
@@ -32,15 +55,15 @@ function DetailPage() {
             </div>
             <div className="gallery">
                 <div className="gallery__left">
-                    <img className="image image__left" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
+                    <img className="image image__left" src={results.mainImage} />
                 </div>
                  <div className="gallery__middle">
-                    <img className="image image__middle__top" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
-                    <img className="image image__middle__bottom" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
+                    <img className="image image__middle__top" src={results.images[0].image.url} />
+                    <img className="image image__middle__bottom" src={results.images[1].image.url} />
                 </div>
                 <div className="gallery__right">
-                    <img className="image image__right image__right__top" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
-                    <img className="image image__right image__right__bottom" src="https://thespaces.com/wp-content/uploads/2016/08/airbnb-samara-yoshino-sugi-cedar-house.jpg" />
+                    <img className="image image__right image__right__top" src={results.images[2].image.url} />
+                    <img className="image image__right image__right__bottom" src={results.images[3].image.url} />
                     <div className="btn-gallery-more">Alle Bilder</div>
                 </div> 
             </div>
@@ -59,12 +82,7 @@ function DetailPage() {
                         </div>
                     </div>
                     <div className="detailPage__body__text detail-box-padding">
-                        <p>
-                        Ergonomischer Stuhl mit Tisch in geräumigen, hellen Raum. Drucker, 
-                        WLAN, Küche und Toilette, Café und Kantine, nette Menschen aus IT, 
-                        HR und Datenschutz. Sehr gute Anbindung zu öffentlichen Verkehrsmitteln 
-                        und es gibt kostenlose Parkplätze.
-                        </p>
+                        <p>{results.description}</p>
                     </div>
 
                     <div className="equipment detail-box-padding">
@@ -118,7 +136,7 @@ function DetailPage() {
 
                         <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/1.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Safa</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -137,7 +155,7 @@ function DetailPage() {
 
                         <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/2.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Name</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -154,7 +172,7 @@ function DetailPage() {
                     
                         <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/3.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Name</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -179,7 +197,7 @@ function DetailPage() {
 
                     <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/1.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Name</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -197,7 +215,7 @@ function DetailPage() {
 
                         <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/1.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Name</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -217,7 +235,7 @@ function DetailPage() {
 
                         <div className="rating-card">
                             <div className="rating-card-top">
-                                <img src={'./images/profile_pictures/1.png'} className="rating-card-img" alt=""/>
+                                <img src={'http://static.yak-juno.net/profile_pictures/1.png'} className="rating-card-img" alt=""/>
                                 <div>
                                     <p className="rating-card-name">Name</p>
                                     <p className="rating-card-date">Oktober 2020</p>
@@ -253,16 +271,20 @@ function DetailPage() {
                 <p className="map-subheading">Sebnitzer Straße 3, 01099 Dresden, Germany</p>
                 <div style={{height: '450px'}}>
                     <GoogleMapReact
-                        bootstrapURLKeys={{ key: 'AIzaSyDPm1WLTQeH4Gb3PZtK7XyyU5FAas4Wm6s' }}
-                        defaultCenter={location}
-                        defaultZoom={12}
+                            bootstrapURLKeys={{ key: "AIzaSyC4SEqFV-f2PaK5aw44zksmqYUEx-aZ4Kw" }}
+                            defaultCenter={center}
+                            defaultZoom={10}
                     >
-                    <AnyReactComponent
-                        lat={37.42216}
-                        lng={-122.08427}
-                        text="My Marker"
-                    />
-                    </GoogleMapReact>
+
+            
+
+                    <Tooltip title="Sydney Testing" {...latlng}>
+                            <LocationOnIcon style={{ transform: "translate(-50%, -100%)" }} />
+                    </Tooltip>
+
+
+                    
+                </GoogleMapReact>
                 </div>
 
                 <div className="map-btn-more">Mehr über den Standort</div>
@@ -272,7 +294,7 @@ function DetailPage() {
             <div className="host detail-box-padding">
             
                 <div className="host-card">
-                    <img src={'./images/profile_pictures/1.png'} className="host-card-img" alt=""/>
+                    <img src={'http://static.yak-juno.net/profile_pictures/1.png'} className="host-card-img" alt=""/>
                     <div className="host-card-top">
                         <div className="host-card-title">Soliwa Personalservice GmbH</div>
                         <div className="host-card-date">Mitglied seit April 2020</div>

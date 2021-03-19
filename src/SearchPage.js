@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style/SearchPage.css'
 import { Button } from '@material-ui/core'
 import SearchResult from './SearchResult'
@@ -7,10 +7,12 @@ import axios from 'axios'
 
 function SearchPage() {
 
+    const [results, setResults] = useState(null);
+
     useEffect(() => {
         axios.get('http://localhost:3003/api/tickets')
             .then(data => {
-                console.log(data)
+                setResults(data.data);
             })
     }, [])
 
@@ -25,30 +27,24 @@ function SearchPage() {
                 <Button variant="outlined">Rooms and beds</Button>
                 <Button variant="outlined">More filters</Button>
             </div>
-            <SearchResult img="https://lokcom.net/wp-content/uploads/2019/09/airbnb-apartment-Ultimate-checklist-to-start-renting-your-flat-on-Airbnb-800x451.jpg"
-                            location="Private room in center of Paris"
-                            title="Edwardian House"
-                            description="1 guets - 1 bedroom - 1.5 bedrooms shared - bathroom - wifi - kitchen - Free parking - Washing machine"
-                            star={4.73}
-                            price="€23/night"
-                            total="€66 total"
-                            />
-             <SearchResult img="https://lokcom.net/wp-content/uploads/2019/09/airbnb-apartment-Ultimate-checklist-to-start-renting-your-flat-on-Airbnb-800x451.jpg"
-                            location="Private room in center of Paris"
-                            title="Edwardian House"
-                            description="1 guets - 1 bedroom - 1.5 bedrooms shared - bathroom - wifi - kitchen - Free parking - Washing machine"
-                            star={4.73}
-                            price="€23/night"
-                            total="€66 total"
-                            />
-             <SearchResult img="https://lokcom.net/wp-content/uploads/2019/09/airbnb-apartment-Ultimate-checklist-to-start-renting-your-flat-on-Airbnb-800x451.jpg"
-                            location="Private room in center of Paris"
-                            title="Edwardian House"
-                            description="1 guets - 1 bedroom - 1.5 bedrooms shared - bathroom - wifi - kitchen - Free parking - Washing machine"
-                            star={4.73}
-                            price="€23/night"
-                            total="€66 total"
-                            />
+
+            { results && results.map( result => {
+                return (
+                    <SearchResult img={result.mainImage}
+                        shortText={result.shortText}
+                        title={result.title}
+                        description="1 guets - 1 bedroom - 1.5 bedrooms shared - bathroom - wifi - kitchen - Free parking - Washing machine"
+                        star={result.rating}
+                        price={result.price}
+                        total="€66 total"
+                        link={result.id}
+                    />
+                )
+            })}
+             
+
+          
+
         </div>
     )
 }

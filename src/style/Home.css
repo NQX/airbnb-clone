@@ -72,6 +72,11 @@
 /* four sectionn */
 .four-card {
     width: 25%;
+    margin: 10px;
+}
+
+.four-card > p {
+    font-weight: 500;
 }
 
 .four-card > img {
@@ -81,5 +86,6 @@
 
 .four-selection-container {
     display: flex;
+    padding-bottom: 50px;
 
 }
