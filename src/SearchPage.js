@@ -5,16 +5,21 @@ import SearchResult from './SearchResult'
 
 import axios from 'axios'
 
-function SearchPage() {
+function SearchPage( { results } ) {
 
-    const [results, setResults] = useState(null);
+    // const [results, setResults] = useState(null);
 
-    useEffect(() => {
-        axios.get('http://localhost:3003/api/tickets')
-            .then(data => {
-                setResults(data.data);
-            })
-    }, [])
+    // useEffect(() => {
+    //     axios.get('http://localhost:3003/api/tickets')
+    //         .then(data => {
+    //             setResults(data.data);
+    //         })
+    // }, [])
+
+    if(!results) {
+        return <div>loading</div>
+    }
+    
 
     return (
         <div className="searchPage">
@@ -38,6 +43,7 @@ function SearchPage() {
                         price={result.price}
                         total="€66 total"
                         link={result.id}
+                        data={result.id}
                     />
                 )
             })}

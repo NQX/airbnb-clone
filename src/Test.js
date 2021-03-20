@@ -1,34 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import SearchPage from './SearchPage';
+import axios from 'axios';
+import './style/Map.css';
 
 
 
-const center = { lat: -25.585241, lng: 133.775136 };
+function Test() {
 
-  const AnyReactComponent = ({ text }) => (
-    <div style={{
-      color: 'white', 
-      background: 'grey',
-      padding: '15px 10px',
-      display: 'inline-flex',
-      textAlign: 'center',
-      alignItems: 'center',
-      justifyContent: 'center',
-      borderRadius: '100%',
-      transform: 'translate(-50%, -50%)'
-    }}>
+  const [results, setResults] = useState(null);
+
+useEffect(() => {
+    axios.get('http://localhost:3003/api/tickets')
+        .then(data => {
+            setResults(data.data);
+        })
+}, [])
+
+
+
+
+const center = { lat: 52.467770, lng: 13.391050 };
+
+  const AnyReactComponent = ({ text, data }) => (
+    <div className="marker" data-id={data}>
       {text}
     </div>
   );
 
-function Test() {
-  const center = { lat: -25.585241, lng: 151.1663935 };
+  if(!results) {
+    return <div>loading</div>
+}
+
 
     return (
         <div style={{ display: 'flex', width: '100%'}}>
             <div style={{width: '60vw'}}>
-            <SearchPage />
+            <SearchPage results={results}/>
             </div>
 
         
@@ -37,22 +45,29 @@ function Test() {
         <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyC4SEqFV-f2PaK5aw44zksmqYUEx-aZ4Kw" }}
                 defaultCenter={center}
-                defaultZoom={8}
+                defaultZoom={10}
                 options={(maps) => ({
-                    scrollwheel: true
+                    scrollwheel: true,
+                    panControl: true
                 })}
             >
-            <AnyReactComponent 
-                lat={-25.955413} 
-                lng={150.337844} 
-                text={'Kreyser Avrora'} 
-            />
+
+
+
+           { results && results.map( result => {
+            return(
 
             <AnyReactComponent 
-                lat={-26.955413} 
-                lng={150.337844} 
-                text={'Kreyser Avrora'} 
-            />
+              lat={result.long_address.lat} 
+              lng={result.long_address.lon} 
+              data={result.id}
+              text={'Desk'} 
+           />
+
+            )
+          })}
+             
+          
 
             </GoogleMapReact>
       </div>

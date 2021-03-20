@@ -14,11 +14,19 @@ function SearchResult({
     star,
     price,
     total,
+    data,
     link
  }) {
+
+
+    function onHover() {
+        console.log('hoover')
+    }
+
     return (
         <Link to={`/detail/${link}`}>
-        <div className="searchResult">
+
+        <div className="searchResult" data={data} onMouseOver={onHover}>
             <img src={img} alt="" />
             <FavoriteBorderIcon className="searchResult__heart" />
             <div className="searchResult__info">
@@ -40,6 +48,7 @@ function SearchResult({
                 </div>
             </div>
         </div>
+
         </Link>
     )
 }
