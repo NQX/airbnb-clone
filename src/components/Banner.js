@@ -3,6 +3,8 @@ import '../style/Banner.css'
 import { Button } from '@material-ui/core'
 import Search from '../components/Search'
 import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 
 function Banner() {
@@ -13,9 +15,11 @@ function Banner() {
         <div style={{backgroundImage: 'url("./images/office.jpg")'}} className="banner">
             <div className="banner__search">
                 {showSearch && <Search />}
-                <Button onClick={() => setShowSearch(!showSearch)} 
+        <Link to="/test">
+                <Button  
                         className="banner__searchButton" 
                         variant="outlined">{showSearch ? 'Hide' : 'Search Dates'}</Button>
+        </Link>
             </div>
             <div className="banner__info">
                 <h1>Get out and stretch your imagination</h1>

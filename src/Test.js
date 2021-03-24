@@ -11,7 +11,7 @@ function Test() {
   const [results, setResults] = useState(null);
 
 useEffect(() => {
-    axios.get('http://localhost:3003/api/tickets')
+    axios.get('http://ticket.dunkelheit.net/api/tickets')
         .then(data => {
             setResults(data.data);
         })

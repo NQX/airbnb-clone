@@ -14,12 +14,16 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Tooltip } from "@material-ui/core";
 
 
-  const latlng = {
-    lat: -33.8148145,
-    lng: 151.1663935
-  };
-  const center = { lat: -33.8148145, lng: 151.1663935 };
+//   const latlng = {
+//     lat: -33.8148145,
+//     lng: 151.1663935
+//   };
 
+  const AnyReactComponent = ({ text, data }) => (
+    <div className="marker" data-id={data}>
+      {text}
+    </div>
+  );
 
 
 function DetailPage({props}) {
@@ -29,9 +33,10 @@ function DetailPage({props}) {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3003/api/tickets/${id}`)
+        axios.get(`http://ticket.dunkelheit.net/api/tickets/${id}`)
             .then(data => {
                 setResults(data.data)
+
             })
     }, [])
 
@@ -270,21 +275,32 @@ function DetailPage({props}) {
                 <p className="map-heading">Adresse</p>
                 <p className="map-subheading">Sebnitzer Straße 3, 01099 Dresden, Germany</p>
                 <div style={{height: '450px'}}>
-                    <GoogleMapReact
-                            bootstrapURLKeys={{ key: "AIzaSyC4SEqFV-f2PaK5aw44zksmqYUEx-aZ4Kw" }}
-                            defaultCenter={center}
-                            defaultZoom={10}
-                    >
 
-            
 
-                    <Tooltip title="Sydney Testing" {...latlng}>
-                            <LocationOnIcon style={{ transform: "translate(-50%, -100%)" }} />
-                    </Tooltip>
-
+                { results && 
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: "AIzaSyC4SEqFV-f2PaK5aw44zksmqYUEx-aZ4Kw" }}
+                    defaultCenter={{lat: results.long_address.lat, lng: results.long_address.lon}}
+                    defaultZoom={10}
+                    options={(maps) => ({
+                        scrollwheel: true,
+                        panControl: true
+                    })}
+                >
+     
+                    <AnyReactComponent 
+                        lat={results.long_address.lat} 
+                        lng={results.long_address.lon} 
+                        data={results.id}
+                        text={'Desk'} 
+                    />
 
                     
+        
                 </GoogleMapReact>
+
+                }
+
                 </div>
 
                 <div className="map-btn-more">Mehr über den Standort</div>
